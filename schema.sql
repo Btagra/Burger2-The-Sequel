@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS burger_list;
+CREATE DATABASE burger_list;
