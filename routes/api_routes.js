@@ -4,7 +4,6 @@ module.exports = function (app) {
     app.get("/burgers", function (req, res) {
         db.Burger.findAll({}).then(function (data) {
             var hbsObject = { burgers: data };
-            console.log(hbsObject);
             res.render("home", hbsObject);
         });
     });

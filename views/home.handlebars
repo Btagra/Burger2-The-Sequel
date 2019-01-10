@@ -8,13 +8,12 @@
             <div class="row">
                 {{#each burgers}}
                 {{#unless this.devoured}}
-                <div class="col-sm-9 text-center">
+                <div class="col-sm-9 text-center burger">
                     <pre>{{this.id}}. {{this.burger_name}}
 					</pre>
-                    <!-- {{this.Date}} -->
                 </div>
                 <div class="col-sm-3 text-center">
-                    <form action="burgers/update/{{this.id}}?_method=PUT" method="POST" class="devour-form" class="button-size">
+                    <form class="devour-form" class="button-size">
                         <input input type="hidden" class="burger_id" type="text" value={{this.id}}><br>
                         <button type="submit" class="btn btn-default">Devour it!</button>
                     </form>
@@ -26,7 +25,10 @@
         <div class="col-sm-6 text-center" class="task">
             {{#each burgers}}
             {{#if this.devoured}}
-            <input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly>
+            <form action="burgers/update/{{this.id}}?_method=PUT" method="POST">
+                <input class="form-control" type="text" placeholder="{{this.id}} . {{this.burger_name}}" readonly>
+                <button type="submit" class="btn btn-default">Devour it!</button>
+            </form>
             {{/if}}
             {{/each}}
         </div>

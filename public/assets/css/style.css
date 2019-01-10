@@ -10,3 +10,15 @@ img {
 h1{
     margin-bottom: 20px;
 }
+
+.form-control {
+    background: white;
+    border:2px solid black;
+}
+
+.burger {
+    background: white;
+    border:2px solid black;
+    padding-top:10px;
+    margin-top:5px;
+}
